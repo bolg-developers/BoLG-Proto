@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package bolg.hello.v1;
+
+import "bolg/type/empty.proto";
+
+option go_package = "github.com/bolg-developers/BoLG-Server/genproto/hello/v1;hello";
+option java_multiple_files = true;
+option java_outer_classname = "HelloProto";
+option java_package = "bolg_developers.bolg.hello.v1";
+
+service Hello {
+    rpc Greet(bolg.type.Empty) returns (GreetResponse) {}
+}
+
+message GreetResponse {
+    string message = 1;
+}
